@@ -50,7 +50,7 @@ export function Layer01Manifesto() {
   const manifestoText = "Cortex Hub is not a club. It is not a committee. It is a marketplace — a place where someone who knows something meets someone who wants to learn it. Every Wednesday, one of those matches happens in a room. No gatekeeping. No hierarchy. Just knowledge, exchanged freely, between people who care enough to show up.";
 
   return (
-    <SectionWrapper  className="relative min-h-screen flex flex-col justify-center overflow-hidden border-b border-violet/40 bg-void">
+    <SectionWrapper id="manifesto"  className="relative min-h-screen flex flex-col justify-center overflow-hidden border-b border-violet/40 bg-void">
       <div className="absolute right-0 top-0 bottom-0 w-1/3 opacity-30">
         <HalftoneField density="sparse"  />
       </div>

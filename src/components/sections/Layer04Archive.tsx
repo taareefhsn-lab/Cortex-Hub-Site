@@ -73,7 +73,7 @@ export function Layer04Archive() {
   }, { scope: sectionRef });
 
   return (
-    <SectionWrapper ref={sectionRef} className="relative min-h-screen py-64 overflow-hidden border-t border-[rgba(125,78,202,0.4)]">
+    <SectionWrapper id="archive" ref={sectionRef} className="relative min-h-screen py-64 overflow-hidden border-t border-[rgba(125,78,202,0.4)]">
       <div className="container mx-auto px-24">
         <div className="mb-48 text-[rgba(125,78,202,1)] font-departure text-sm tracking-widest">
           004 — EPISODE GUIDE

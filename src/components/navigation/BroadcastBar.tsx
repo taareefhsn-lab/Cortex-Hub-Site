@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { useSmoothScroll } from '@/components/providers/SmoothScrollProvider';
 import { Button } from '@/components/ui/Button';
 
 const NAV_LINKS = [
@@ -15,8 +16,10 @@ const NAV_LINKS = [
 export function BroadcastBar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const lenis = useSmoothScroll();
   const [tickerText, setTickerText] = useState('EP.001 — NEXT WEDNESDAY — TOPIC TBA');
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => { e.preventDefault(); setMobileOpen(false); if (lenis) { lenis.scrollTo(href, { offset: -80 }); } else { document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' }); } };
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 48);
@@ -72,7 +75,7 @@ export function BroadcastBar() {
         </div>
 
         {/* Main nav bar */}
-        <div className="px-[clamp(1.25rem,5vw,6rem)]">
+        <div className="px-[clamp(1.25rem,5vw,6rem)] pt-2 md:pt-4 pb-2">
           <nav className="flex items-center justify-between h-14 md:h-16">
             {/* Wordmark */}
             <Link href="/" className="group flex items-baseline gap-1">
@@ -90,6 +93,7 @@ export function BroadcastBar() {
                 <a
                   key={link.href}
                   href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
                   className="font-mono text-[0.7rem] uppercase tracking-[0.08em] text-muted transition-colors duration-200 hover:text-bone"
                 >
                   {link.label}
@@ -148,8 +152,9 @@ export function BroadcastBar() {
         <div className="flex-1 flex flex-col justify-center px-8 pt-28">
           {NAV_LINKS.map((link, i) => (
             <a
-              key={link.href}
-              href={link.href}
+                  key={link.href}
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
               onClick={() => setMobileOpen(false)}
               className={`block py-4 border-b border-violet/20 font-display text-3xl uppercase font-bold text-bone transition-all duration-500 hover:text-acid ${
                 mobileOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'

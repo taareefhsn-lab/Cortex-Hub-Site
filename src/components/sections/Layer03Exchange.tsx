@@ -73,7 +73,7 @@ export function Layer03Exchange() {
   }, { scope: sectionRef });
 
   return (
-    <SectionWrapper ref={sectionRef} className="relative min-h-screen py-64 overflow-hidden border-t border-[rgba(125,78,202,0.4)]">
+    <SectionWrapper id="exchange" ref={sectionRef} className="relative min-h-screen py-64 overflow-hidden border-t border-[rgba(125,78,202,0.4)]">
       <div className="absolute inset-0 -z-10 pointer-events-none">
         <HalftoneField />
       </div>

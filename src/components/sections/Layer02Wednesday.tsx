@@ -77,7 +77,7 @@ export function Layer02Wednesday() {
   }, { scope: containerRef });
 
   return (
-    <SectionWrapper  className="relative min-h-screen flex flex-col justify-center overflow-hidden border-b border-violet/40 bg-void">
+    <SectionWrapper id="wednesday"  className="relative min-h-screen flex flex-col justify-center overflow-hidden border-b border-violet/40 bg-void">
       <div className="absolute top-12 left-6 font-data text-violet text-sm tracking-widest uppercase z-10">
         002 — THE WEDNESDAY RHYTHM
       </div>

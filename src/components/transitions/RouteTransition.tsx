@@ -26,7 +26,7 @@ export function RouteTransition() {
   return (
     <div
       ref={overlayRef}
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-void border-b border-violet/40 pointer-events-none"
+      className="fixed top-0 left-0 w-screen h-[100dvh] z-[100] flex items-center justify-center bg-void border-b border-violet/40 pointer-events-none"
     >
       <div className="text-bone font-display font-bold text-4xl md:text-6xl tracking-widest uppercase">
         Cortex Hub
