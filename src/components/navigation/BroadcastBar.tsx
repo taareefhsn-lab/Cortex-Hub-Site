@@ -48,7 +48,7 @@ export function BroadcastBar() {
         }`}
       >
         {/* Live ticker strip */}
-        <div className="bg-violet/10 border-b border-violet/20 overflow-hidden">
+        <div className="bg-violet/10 overflow-hidden border-b border-violet/20">
           <div className="flex items-center h-7">
             <div className="flex-shrink-0 bg-vermilion px-3 h-full flex items-center">
               <span className="font-mono text-[0.65rem] uppercase tracking-[0.08em] text-void font-bold">
@@ -75,7 +75,7 @@ export function BroadcastBar() {
         </div>
 
         {/* Main nav bar */}
-        <div className="px-[clamp(1.25rem,5vw,6rem)] pt-2 md:pt-4 pb-2">
+        <div className="px-[clamp(1.25rem,5vw,6rem)] py-3 md:py-4">
           <nav className="flex items-center justify-between h-14 md:h-16">
             {/* Wordmark */}
             <Link href="/" className="group flex items-baseline gap-1">
@@ -104,7 +104,7 @@ export function BroadcastBar() {
             {/* Desktop CTA + Hamburger */}
             <div className="flex items-center gap-4">
               <div className="hidden md:block">
-                <Button variant="primary" size="sm" href="#register">
+                <Button variant="primary" size="sm" href="#join">
                   Register
                 </Button>
               </div>
@@ -155,7 +155,6 @@ export function BroadcastBar() {
                   key={link.href}
                   href={link.href}
                   onClick={(e) => handleNavClick(e, link.href)}
-              onClick={() => setMobileOpen(false)}
               className={`block py-4 border-b border-violet/20 font-display text-3xl uppercase font-bold text-bone transition-all duration-500 hover:text-acid ${
                 mobileOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0'
               }`}

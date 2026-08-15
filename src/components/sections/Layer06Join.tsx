@@ -6,19 +6,19 @@ import { Button } from '../ui/Button';
 
 export default function Layer06Join() {
   return (
-    <div className="sticky bottom-0 -z-10 w-full bg-[var(--surface)] pt-24 pb-8 min-h-screen flex flex-col justify-between border-t border-[var(--violet)]/40">
+    <div className="relative z-10 w-full bg-[var(--surface)] pt-16 pb-8 min-h-screen flex flex-col justify-between border-t border-[var(--violet)]/40" id="join">
       <div className="mx-auto w-full max-w-[1440px] px-[clamp(1.25rem,5vw,6rem)]">
-        <div className="font-mono text-[var(--violet)] text-sm tracking-widest mb-16 border-b border-[var(--violet)]/40 pb-4">
+        <div className="font-mono text-[var(--violet)] text-sm tracking-widest mb-8 border-b border-[var(--violet)]/40 pb-4">
           006 — BECOME A MEMBER
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Form */}
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-8">
             <h2 className="font-display text-4xl md:text-5xl font-bold uppercase tracking-tight text-[var(--bone)]">
               Membership Application
             </h2>
-            <form className="flex flex-col gap-6 font-mono text-sm">
+            <form className="flex flex-col gap-4 font-mono text-sm">
               <div className="flex flex-col gap-2">
                 <label className="text-[var(--muted)]">NAME</label>
                 <input 
@@ -52,12 +52,12 @@ export default function Layer06Join() {
                   <option>DESIGN / UI UX</option>
                 </select>
               </div>
-              <Button type="button" className="mt-6 w-full md:w-auto self-start">SUBMIT APPLICATION</Button>
+              <Button type="button" className="mt-4 w-full md:w-auto self-start">SUBMIT APPLICATION</Button>
             </form>
           </div>
 
           {/* Members Strip */}
-          <div className="flex flex-col gap-12">
+          <div className="flex flex-col gap-8">
             <h2 className="font-display text-4xl md:text-5xl font-bold uppercase tracking-tight text-[var(--bone)]">
               Core Team
             </h2>
@@ -75,11 +75,37 @@ export default function Layer06Join() {
       </div>
 
       {/* Footer */}
-      <footer className="mx-auto w-full max-w-[1440px] px-[clamp(1.25rem,5vw,6rem)] mt-24">
-        <div className="border-t border-[var(--violet)]/40 pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 font-mono text-xs text-[var(--muted)]">
-          <div className="uppercase">Dept. of Artificial Intelligence & Data Science</div>
-          <div className="uppercase text-[var(--violet)]">Faculty Coordinators: Dr. XYZ, Prof. ABC</div>
-          <div>© 2026 CORTEX HUB</div>
+      <footer className="mx-auto w-full max-w-[1440px] px-[clamp(1.25rem,5vw,6rem)] mt-16 pb-12">
+        <div className="border-t border-[var(--violet)]/40 pt-12">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-center">
+            {/* Left side: Details & Contact */}
+            <div className="md:col-span-3 flex flex-col gap-3 font-mono text-xs text-[var(--muted)] uppercase">
+              <div>Dept. of Artificial Intelligence & Data Science</div>
+              <div>Faculty Coordinators: Dr. XYZ, Prof. ABC</div>
+              <div className="text-[var(--violet)]">Contact: team@cortexhub.edu</div>
+            </div>
+            
+            {/* Center: Logo */}
+            <div className="md:col-span-6 flex justify-center w-full">
+              <img 
+                src="/cortex-logo.jpg" 
+                alt="Cortex Hub Logo" 
+                className="w-full max-w-[800px] h-auto object-contain mix-blend-lighten opacity-90 hover:opacity-100 transition-opacity duration-300 drop-shadow-[0_0_15px_rgba(var(--violet),0.3)]"
+              />
+            </div>
+
+            {/* Right side: About */}
+            <div className="md:col-span-3 flex flex-col gap-3 font-mono text-xs text-[var(--muted)] uppercase md:text-right">
+              <div className="text-[var(--bone)]">ABOUT CORTEX HUB</div>
+              <div>A two-way marketplace for knowledge.</div>
+              <div>No gatekeeping. No hierarchy.</div>
+            </div>
+          </div>
+          
+          {/* Bottom: Copyright */}
+          <div className="mt-16 text-center font-mono text-[10px] text-[var(--muted)]/50 uppercase tracking-widest">
+            © 2026 CORTEX HUB. ALL RIGHTS RESERVED.
+          </div>
         </div>
       </footer>
     </div>
